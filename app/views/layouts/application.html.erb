@@ -1,16 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>YourNote</title>
+    <title>your note</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p&family=Zen+Maru+Gothic:wght@300&display=swap" rel="stylesheet">
   </head>
 
   <body>
+    <header class="header">
+      <div class="inner">
+        <div class="nav">
+          <div class="nav__left">
+            <%= link_to image_tag("IMG_1875.jpg", class: :logo), root_path %>
+          </div>
+          <% if user_signed_in?%>
+            <div class="nav__right"> 
+              <%= link_to "New Post", root_path, class: :nav__btn %>
+              <%= link_to "My page",  root_path, class: :nav__mypage %>
+              <%= link_to "Log out",  destroy_user_session_path, data: { turbo_method: :delete }, class: :nav__logout %>
+
+
+            </div> 
+          <% else%>
+            <div class="nav__right">
+              <%= link_to "Log in", new_user_session_path, class: :nav__btn %>
+              <%= link_to "Sign up", new_user_registration_path, class: :nav__btn %>
+            </div>
+          <% end%>
+        </div>
+      </div>
+    </header>
     <%= yield %>
+    <footer class="footer">
+
+    </footer>
   </body>
 </html>
