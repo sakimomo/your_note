@@ -1,6 +1,5 @@
 class NotesController < ApplicationController
-  before_action :move_to_index, only: [:index]
-  before_action :authenticate_user!
+  before_action :authenticate_user!, only: [:new, :create,:destroy,:update]
 
   def index
     @notes = Note.all 
@@ -51,12 +50,6 @@ class NotesController < ApplicationController
   private
 
   private
-  def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
-  end
-
   def note_params
     params.require(:note).permit(:content, :image).merge(user_id: current_user.id)
   end
