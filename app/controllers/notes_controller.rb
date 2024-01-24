@@ -1,6 +1,6 @@
 class NotesController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
-  before_action :authenticate_user!, only: [:new, :create,:destroy,:update]
+  before_action :move_to_index, only: [:index]
+  before_action :authenticate_user!
 
   def index
     @notes = Note.all 
@@ -24,6 +24,24 @@ class NotesController < ApplicationController
     @note = Note.find(params[:id])
 
   end
+
+  def edit
+    @note = Note.find_by(id: params[:id])
+
+    if @note.nil? || current_user.id != @note.user_id
+      redirect_to root_path
+    end
+  end
+
+  def update
+    note = Note.find(params[:id])
+    if note.update(note_params)
+      redirect_to note_path
+    else
+      render :edit
+    end
+  end
+
   
   private
   def move_to_index

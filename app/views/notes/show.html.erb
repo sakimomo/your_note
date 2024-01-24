@@ -4,7 +4,7 @@
     <div class="note__card">
      <% if user_signed_in? && current_user.id == @note.user_id %>
         <div class="note__manage">
-          <%= link_to "編集", root_path, class: :note__btn %>
+          <%= link_to "編集", edit_note_path, class: :note__btn %>
           <%= link_to "削除", root_path, class: :note__btn %>
         </div>
       <% else %>
