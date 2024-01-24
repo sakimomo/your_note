@@ -4,8 +4,8 @@
     <div class="note__card">
      <% if user_signed_in? && current_user.id == @note.user_id %>
         <div class="note__manage">
-          <%= link_to "編集", edit_note_path, class: :note__btn %>
-          <%= link_to "削除", root_path, class: :note__btn %>
+          <%= link_to "編集", edit_note_path(@note.id), class: :note__btn %>
+          <%= link_to "削除", note_path(@note.id), data: { turbo_method: :delete }, class: :note__btn %>
         </div>
       <% else %>
         <div class="note__manage">
