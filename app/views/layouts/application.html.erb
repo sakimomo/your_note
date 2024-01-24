@@ -18,11 +18,11 @@
       <div class="inner">
         <div class="nav">
           <div class="nav__left">
-            <%= link_to image_tag("IMG_1875.jpg", class: :logo), root_path %>
+            <%= link_to image_tag("IMG_1878.jpg", class: :logo), root_path %>
           </div>
           <% if user_signed_in?%>
             <div class="nav__right"> 
-              <%= link_to "New Post", root_path, class: :nav__btn %>
+              <%= link_to "New Post", new_note_path, class: :nav__btn %>
               <%= link_to "My page",  root_path, class: :nav__mypage %>
               <%= link_to "Log out",  destroy_user_session_path, data: { turbo_method: :delete }, class: :nav__logout %>
 

@@ -1,0 +1,30 @@
+<main class="main">
+  <div class="inner">
+    <div class="note__wrapper">
+    <div class="note__card">
+     <% if user_signed_in? && current_user.id == @note.user_id %>
+        <div class="note__manage">
+          <%= link_to "Edit", edit_note_path(@note.id), class: :note__btn %>
+          <%= link_to "Delete", note_path(@note.id), data: { turbo_method: :delete }, class: :note__btn %>
+        </div>
+      <% else %>
+        <div class="note__manage">
+          <%= link_to "♡", root_path, class: :note__btn %>
+          <%= link_to "follow", root_path, class: :note__btn %>
+        </div>
+      <% end%>
+      <div class="note__image">
+        <%= image_tag @note.image %>
+      </div>
+      <div class="note__body">
+        <div class="note__detail">
+          <p class="detail__message">
+            <%= @note.content %>
+          </p>
+        </div>
+      </div>
+       <%= link_to "by #{@note.user.name}", root_path, class: :note__user %>
+     </div>
+    </div>
+  </div>
+</main>

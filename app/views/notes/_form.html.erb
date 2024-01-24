@@ -1,0 +1,37 @@
+<%= form_with model: @note, local: true do |f| %>
+  <div class="field">
+    <%= f.label :image, "Select post" %><br />
+    <%= f.file_field :image, id: "note_image", onchange: "previewImage(this);" %>
+    <div id="image-preview"></div>
+  </div>
+
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content, placeholder: "Write a caption...", class: :form__text, id: "note_content" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Post", class: :form__btn %>
+  </div>
+<% end %>
+
+<script>
+function previewImage(input) {
+  var preview = document.getElementById('image-preview');
+  preview.innerHTML = '';
+  
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      var img = document.createElement('img');
+      img.src = e.target.result;
+      img.style.maxWidth = '40%'; // 画像の最大幅を100%に設定
+      img.style.height = 'auto';   // 高さを自動調整
+      preview.appendChild(img);
+    }
+
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+</script>

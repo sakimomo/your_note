@@ -12,21 +12,21 @@
 | profile            | text   | null: false               |
 
 - has_many :comments
-- has_many :phototypes
+- has_many :notes
 - has_many :likes
 
 ## commentsテーブル
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
 | content   | text       | null: false                    |
-| prototype | references | null: false, foreign_key: true |
+| note      | references | null: false, foreign_key: true |
 | user      | references | null: false, foreign_key: true |
 
 - belongs_to :user
-- belongs_to :phototype
+- belongs_to :note
 - has_many :likes
 
-## phototypesテーブル
+## notesテーブル
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
 | content    | text       | null: false                    | 
@@ -38,11 +38,11 @@
 ## likesテーブル
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
-| prototype  | references | null: false, foreign_key: true |
+| note       | references | null: false, foreign_key: true |
 | user       | references | null: false, foreign_key: true |
 
 - belongs_to :user
-- belongs_to :prototype
+- belongs_to :note
 
 ## relationshipsテーブル
 | Column     | Type       | Options                        |
