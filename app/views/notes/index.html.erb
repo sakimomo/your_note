@@ -7,6 +7,8 @@
         <%= link_to "#{current_user.name}", root_path, class: :greeting__link%>
         さん
       </div> 
+      <% else%>
+        <img src="<%= image_path('inu.gif') %>" alt="Animated Image" class="inu">
     <% end%>
 
     <div class="card__wrapper">
