@@ -23,7 +23,7 @@
           </p>
         </div>
       </div>
-       <%= link_to "by #{@note.user.name}", root_path, class: :note__user %>
+       <%= link_to "by #{@note.user.name}", user_path(@note.user), class: :note__user %>
       </div>
       <div class="note__comments">
         <%= form_with model: [@note, @comment], url: note_comments_path(@note), local: true do |f| %>
@@ -40,7 +40,7 @@
           <% @note.comments.each do |comment| %>
             <li class="note_list">
               <%= comment.content %>
-              <%= link_to comment.user.name, root_path, class: :comment_user %>
+              <%= link_to comment.user.name, user_path(comment.user), class: :comment_user %>
             </li>
           <% end %>
         </ul>

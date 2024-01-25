@@ -1,0 +1,29 @@
+<div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">
+        <%= "#{@user.name}'s page"%>
+      </h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th class="table__col1">Name</th>
+            <td class="table__col2"><%= "#{@user.name}" %></td>
+          </tr>
+          <tr>
+            <th class="table__col1">Plofile</th>
+            <td class="table__col2"><%= "#{@user.profile}" %></td>
+          </tr>
+        </tbody>
+      </table>
+      <img src="<%= image_path('IMG_1.png') %>" alt="Animated Image" class="inu2">
+      <img src="<%= image_path('IMG_1.png') %>" alt="Animated Image" class="inu2">
+      <h2 class="page-heading">
+        <%= "#{@user.name}'s notes"%>
+      </h2>
+      <div class="user__card">
+       <%= render partial: 'notes/note', collection: @user_notes %>
+      </div>
+    </div>
+  </div>
+</div>
