@@ -4,7 +4,7 @@
       <%= link_to image_tag(note.image, class: :card__img), note_path(note.id) %>
     </div>
     <div class="card__body"> 
-      <%= link_to "by #{note.user.name}", root_path, class: :card__user %>
+      <%= link_to "by #{note.user.name}", user_path(note.user), class: :card__user %>
     </div>
   </div>
 <% end %>

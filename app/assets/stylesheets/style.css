@@ -412,3 +412,45 @@ a {
   text-decoration: underline;
 }
 
+/* ユーザーページ */
+.user__wrapper{
+  min-height: calc(100vh - 161px);
+
+}
+.table{
+  border-collapse: collapse;
+  margin-bottom: 32px;
+  width: 50%;
+}
+.table__col1{
+  text-align: left;
+  font-weight: bold;
+  background-color: #fdfbd4;
+  border-collapse: collapse;
+  border: 1px solid #000000;
+  width: 30%;
+  padding: 8px;
+  color: #163a27;
+}
+.table__col2{
+  text-align: left;
+  border: 1px solid #000000;
+  background: #fafafa;
+  border-collapse: collapse;
+  width: 70%;
+  padding: 16px 8px;
+  color: #163a27;
+}
+.user__card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+.inu2{
+  height: 180px;
+  margin-bottom: 20px;
+  
+}
