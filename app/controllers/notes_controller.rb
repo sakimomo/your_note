@@ -1,13 +1,13 @@
 class NotesController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create,:destroy,:update]
+  before_action :authenticate_user!, only: [:new, :create, :destroy, :update]
 
   def index
-    @notes = Note.all 
+    @notes = Note.all
     @notes = Note.order(created_at: :desc)
   end
 
   def new
-   @note = Note.new
+    @note = Note.new
   end
 
   def create
@@ -21,15 +21,16 @@ class NotesController < ApplicationController
 
   def show
     @note = Note.find(params[:id])
-
+    @comment = Comment.new
+    @comments = @note.comments.includes(:user)
   end
 
   def edit
     @note = Note.find_by(id: params[:id])
 
-    if @note.nil? || current_user.id != @note.user_id
-      redirect_to root_path
-    end
+    return unless @note.nil? || current_user.id != @note.user_id
+
+    redirect_to root_path
   end
 
   def update
@@ -49,7 +50,6 @@ class NotesController < ApplicationController
 
   private
 
-  private
   def note_params
     params.require(:note).permit(:content, :image).merge(user_id: current_user.id)
   end

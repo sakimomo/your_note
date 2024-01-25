@@ -11,8 +11,12 @@
         <%= render partial: 'note', collection: @notes %>
         </div> 
       <% else%>
-        <div class="greeting">
-        Hi, there! Sign up to see photos from your friends ☺︎
+      <div class="snow-container">
+       <script src="index.js"></script>
+       <div class="snow"></div>
+      </div>
+        <div class="greeting2">
+        Hi, there! Sign up to see photos from your friends 
         </div>
         <img src="<%= image_path('inu.gif') %>" alt="Animated Image" class="inu">
     <% end%>

@@ -19,7 +19,7 @@ body {
   font-family: "M PLUS 1p", sans-serif;
   font-weight: 400;
   font-style: normal;
-  color: #ffffff;
+  color: #fdfbd4;
   background-color: #be0027;
 }
 
@@ -99,6 +99,11 @@ a {
   transition: 0.4s ease;
 }
 
+.nav__mypage:hover{
+  color: #fdfbd4;
+  background: #163a27;
+}
+
 .nav__logout:hover{
   opacity: 0.5;
 }
@@ -160,9 +165,72 @@ a {
 }
 /* メイン */
 
+.snow-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.snow{
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  animation: snowFall 10s linear infinite;
+}
+
+@keyframes snowFall {
+  0%{
+    opacity: 0;
+    top: 0;
+    transform: translateX(5px);
+  }
+  10%{
+    opacity: 1;
+    transform: translateX(-5px);
+  }
+  20%{
+    transform: translateX(5px);
+  }
+  30%{
+    transform: translateX(-5px);
+  }
+  40%{
+    transform: translateX(5px);
+  }
+  50%{
+    transform: translateX(-5px);
+  }
+  60%{
+    transform: translateX(5px);
+  }
+  70%{
+    transform: translateX(-5px);
+  }
+  80%{
+    transform: translateX(5px);
+  }
+  90%{
+    opacity: 1;
+    transform: translateX(-5px);
+  }
+  100%{
+    opacity: 0;
+    top: 100vh;
+  }
+}
+
 .greeting{
-  margin-bottom: 40px;
+  margin-bottom: 30px;
   text-align:center;
+}
+.greeting2{
+  font-size: 20px;
+  text-align:center;
+  margin-bottom: 40px;
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 2px;
 }
 .greeting__link{
   text-decoration: underline;
@@ -171,6 +239,10 @@ a {
 .page-heading {
   font-size: 30px;
   margin-bottom: 28px;
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 2px;
   
 }
 
@@ -281,17 +353,52 @@ a {
 .note__btn:hover{
   color: #fff;
   background: #be0027;
-
+}
+.note__btn__heart{
+  display: block;
+  padding: 1.0em 2.5em;
+  font-size: 0.4em;
+  color: #be0027;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #999 solid;
+  border-radius: 3px;
+  transition: 0.4s ease;
+  margin: 0 10px;
+  background-color: #ffffff;
+}
+.note__btn__heart:hover{
+  color: #fff;
+  background: #be0027;
 }
 
 .note__comments{
   background-color: #f6f6f6;
   padding: 20px;
   margin: 28px 0 40px 0;
+  border-radius: 10px;
+  border: 1px #000000 solid;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-row {
+  display: flex;
+  justify-content: center;
+}
+
+#comment_content{
+  width: 300px;
+  padding: 0.8em 3.2em;
+  margin-top: 0;
+  font-size: 1.0em;
+  margin-right: 30px;
 }
 
 .comments_lists{
   padding-left: 20px;
+  color: #163a27;
+  text-align: center;
 }
 
 .comments_list{
