@@ -1,16 +1,16 @@
 <main class="main">
   <div class="inner">
     <div class="note__wrapper">
-    <div class="note__card">
-     <% if user_signed_in? && current_user.id == @note.user_id %>
+     <div class="note__card">
+      <% if user_signed_in? && current_user.id == @note.user_id %>
         <div class="note__manage">
           <%= link_to "Edit", edit_note_path(@note.id), class: :note__btn %>
           <%= link_to "Delete", note_path(@note.id), data: { turbo_method: :delete }, class: :note__btn %>
         </div>
       <% else %>
         <div class="note__manage">
-          <%= link_to "♡", root_path, class: :note__btn %>
-          <%= link_to "follow", root_path, class: :note__btn %>
+         <%= link_to "♥", root_path, class: :note__btn__heart %>
+        <%= link_to "follow", root_path, class: :note__btn %>
         </div>
       <% end%>
       <div class="note__image">
@@ -24,7 +24,27 @@
         </div>
       </div>
        <%= link_to "by #{@note.user.name}", root_path, class: :note__user %>
-     </div>
+      </div>
+      <div class="note__comments">
+        <%= form_with model: [@note, @comment], url: note_comments_path(@note), local: true do |f| %>
+          <div class="form-row">
+            <div class="field2">
+              <%= f.text_field :content, id: "comment_content", placeholder: "Add a comment..." %>
+            </div>
+            <div class="actions">
+              <%= f.submit "送信する", class: :form__btn %>
+            </div>
+          </div>
+        <% end %>
+        <ul class="comments_lists">
+          <% @note.comments.each do |comment| %>
+            <li class="note_list">
+              <%= comment.content %>
+              <%= link_to comment.user.name, root_path, class: :comment_user %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </main>
