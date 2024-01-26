@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2024_01_25_091228) do
+ActiveRecord::Schema[7.0].define(version: 2024_01_26_123551) do
   create_table "active_storage_attachments", charset: "utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -49,6 +49,15 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_25_091228) do
     t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
+  create_table "likes", charset: "utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "note_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["note_id"], name: "index_likes_on_note_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "notes", charset: "utf8", force: :cascade do |t|
     t.text "content", null: false
     t.bigint "user_id", null: false
@@ -75,5 +84,7 @@ ActiveRecord::Schema[7.0].define(version: 2024_01_25_091228) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "comments", "notes"
   add_foreign_key "comments", "users"
+  add_foreign_key "likes", "notes"
+  add_foreign_key "likes", "users"
   add_foreign_key "notes", "users"
 end
