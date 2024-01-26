@@ -16,14 +16,12 @@
           </tr>
         </tbody>
       </table>
+      <%= link_to "Likes List", likes_index_path, class: :like__index %>
       <a href="<%= root_path %>">
         <img src="<%= image_path('IMG_1.png') %>" alt="Animated Image" class="inu2">
       </a>
 
-      <a href="<%= root_path %>">
-        <img src="<%= image_path('IMG_1.png') %>" alt="Animated Image" class="inu2">
-      </a>
-      <span class="hey">＜ hey, check me out ☺︎</span>
+      <span class="hey">＜ Hi</span>
       <h2 class="page-heading">
         <%= "#{@user.name}'s notes"%>
       </h2>

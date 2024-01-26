@@ -1,0 +1,26 @@
+<main class="main">
+  <div class="inner">
+
+    <% if @likes.present? %>
+    <div class="page-heading">Liked notes</div>
+      <div class="likes-container">
+        <% @likes.each do |like| %>
+          <% note = like.note %>
+          <% if note.present? %>
+            <div class="card">
+              <div class="card__img-container">
+                <%= link_to image_tag(note.image, class: :card__img), note_path(note.id) %>
+              </div>
+              <div class="card__body"> 
+                <%= link_to "by #{note.user.name}", user_path(note.user), class: :card__user %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    <% else %>
+    <div class="page-heading">No liked notes found.</div>
+    <% end %>
+
+  </div>
+</main>

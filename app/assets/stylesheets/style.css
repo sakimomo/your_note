@@ -478,6 +478,25 @@ a {
   }
 }
 
+/* いいね一覧 */
+.like__index{
+  display: inline-block;
+  padding: 0.8em 3.2em;
+  font-size: 0.8em;
+  color: #ffffff;
+  text-decoration: none;
+  user-select: none;
+  border: 1px #ffffff solid;
+  border-radius: 150px;
+  transition: 0.4s ease;
+  margin-top: 2%;
+  margin-right: 5%;
+}
+.like__index:hover{
+  color: #fff;
+  background: #be0027;
+}  
+
 /* レスポンシブデザイン */
 /* タブレット対応 */
 @media (max-width: 1024px) {
