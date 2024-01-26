@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :notes
   has_many :comments
+  has_many :likes
 
   validates :name, presence: true
   validates :profile, presence: true

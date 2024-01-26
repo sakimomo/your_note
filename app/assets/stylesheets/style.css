@@ -369,6 +369,15 @@ a {
 .note__btn__heart:hover{
   color: #efec81;
 }
+.note__btn__heart2{
+  display: block;
+  font-size: 1.3em;
+  color: #efec81;
+  text-decoration: none;
+  user-select: none;
+  transition: 0.4s ease;
+  margin: 0 20px;
+}
 
 .note__comments{
   background-color: #f6f6f6;
