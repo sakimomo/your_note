@@ -507,6 +507,17 @@ a {
   gap: 10px;
 }
 
+/* フォロー機能 */
+.f__user{
+  color: #f6f6f6;
+  margin-bottom: 30px;
+}
+
+.f__user__link{
+  text-decoration: underline;
+  color: #ffffff;
+}
+
 /* レスポンシブデザイン */
 /* タブレット対応 */
 @media (max-width: 1024px) {

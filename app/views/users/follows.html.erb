@@ -1,0 +1,12 @@
+ <div class="main">
+  <div class="inner">
+    <div class="user__wrapper">
+      <h2 class="page-heading">Following</h2>
+      <% @follows.each do |user| %>
+       <div class="f__user">
+        <%= link_to user.name, user_path(user.id), class: :f__user__link %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
