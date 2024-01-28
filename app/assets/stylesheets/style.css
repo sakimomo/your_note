@@ -456,10 +456,14 @@ a {
 
 }
 
-.inu2{
+.inu2 {
   height: 180px;
   margin-bottom: 40px;
+  transition: transform 0.3s ease; /* ホバー時のアニメーション効果 */
+}
 
+.inu2:hover {
+  transform: scale(1.2); /* ホバー時に1.05倍に拡大 */
 }
 
 .hey {
@@ -488,14 +492,20 @@ a {
   user-select: none;
   border: 1px #ffffff solid;
   border-radius: 150px;
-  transition: 0.4s ease;
+  transition: 0.2s ease;
   margin-top: 2%;
   margin-right: 5%;
 }
 .like__index:hover{
-  color: #fff;
-  background: #be0027;
-}  
+  color: #be0027;
+  background: #ffffff;
+}
+.likes-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
 
 /* レスポンシブデザイン */
 /* タブレット対応 */

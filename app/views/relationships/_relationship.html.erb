@@ -1,0 +1,7 @@
+<% if current_user != @note.user %>
+ <% if @note.user.followed_by?(current_user) %>
+  <%= link_to "Following", user_relationships_path(@note.user.id), class: "note__btn", data: { turbo_method: :delete }, remote: true %>
+ <% else %>
+  <%= link_to "＋Follow", user_relationships_path(@note.user.id), class: "note__btn", data: { turbo_method: :post }, remote: true %>
+ <% end %>
+<% end%>

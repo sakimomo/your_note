@@ -7,7 +7,9 @@ Rails.application.routes.draw do
     resource :likes, only: [:create, :destroy]
   end
   
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    resource :relationships, only: [:create, :destroy]
+  end
   
   get '/likes/index', to: 'likes#index', as: :likes_index
 end

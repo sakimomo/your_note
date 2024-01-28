@@ -10,7 +10,7 @@
       <% else %>
         <div class="note__manage">
           <%= render partial: "likes/like", locals: { note: @note } %>
-          <%= link_to "+follow", root_path, class: :note__btn %>
+          <%= render partial: "relationships/relationship", locals: { note: @note } %>
         </div>
       <% end%>
       <div class="note__image">
