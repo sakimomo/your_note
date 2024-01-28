@@ -14,6 +14,10 @@
 - has_many :comments
 - has_many :notes
 - has_many :likes
+- has_many :active_relationships
+- has_many :followings
+- has_many :passive_relationships
+- has_many :followers
 
 ## commentsテーブル
 | Column    | Type       | Options                        |
@@ -49,3 +53,6 @@
 | ---------- | ---------- | ------------------------------ |
 | follower   | references | null: false, foreign_key: true |
 | followee   | references | null: false, foreign_key: true |
+
+- belongs_to :following, class_name: "User"
+- belongs_to :follower, class_name: "User"
