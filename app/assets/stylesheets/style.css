@@ -261,7 +261,7 @@ a {
   
 }
 
-.inu{
+.dog{
   max-width: 100%;
   height: auto;
   display: block;
@@ -507,13 +507,13 @@ a {
 
 }
 
-.inu2 {
+.dog2 {
   height: 180px;
   margin-bottom: 40px;
   transition: transform 0.3s ease; /* ホバー時のアニメーション効果 */
 }
 
-.inu2:hover {
+.dog2:hover {
   transform: scale(1.2); /* ホバー時に1.05倍に拡大 */
 }
 
@@ -523,7 +523,7 @@ a {
     font-size: 0.8em;
 }
 
-.inu2, .hey {
+.dog2, .hey {
   vertical-align: top;
 }
 
