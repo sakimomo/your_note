@@ -2,8 +2,7 @@ class NotesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :destroy, :update]
 
   def index
-    @notes = Note.all
-    @notes = Note.order(created_at: :desc)
+    @notes = Note.order(created_at: :desc).all
   end
 
   def new

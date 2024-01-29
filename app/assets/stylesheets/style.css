@@ -42,11 +42,11 @@ a {
 .header {
   background-color: #efec81;
   margin-bottom: 48px;
-  padding: 10px 0;
+  padding: 25px 0;
 
 }
 .inner {
-  width: 1024px;
+  width: 80%;
   margin: 0 auto;
 }
 .nav {
@@ -219,10 +219,25 @@ a {
   }
 }
 
-.greeting{
-  margin-bottom: 40px;
-  text-align:center;
+.greeting {
+  margin-bottom: 60px;
+  text-align: center;
+  opacity: 0;
+  animation: slideIn 1s forwards; 
 }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(50px); 
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
 .greeting2{
   font-size: 20px;
   text-align:center;
@@ -256,18 +271,19 @@ a {
 .card__wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content:center;
   align-items: center;
   min-height: calc(100vh - 161px);
 }
+
 .card {
-  width: calc((100% - 20px) / 3);
-  margin-bottom: 40px;
+  width: calc((100% - 45px) / 3);
+  margin-bottom: 20px;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 10px;
   border: 1px #000000 solid;
-
+  margin-left: 15px;
 
 }
 .card__img-container {
@@ -277,6 +293,21 @@ a {
   overflow: hidden;
   position: relative;
   border: 1px #000000 solid;
+  transition: 0.2s ease;
+}
+.card__img-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none; /* マウスイベントを透明なオーバーレイに透過させる */
+  transition: inherit; /* 親要素と同じトランジションを使用 */
+}
+
+.card__img-container:hover:before {
+  background: rgba(184, 184, 184, 0.3); /* ホバー時の色 */
 }
 
 .card__img {
@@ -292,12 +323,25 @@ a {
 .card__summary {
   font-size: 16px;
 }
+
+.card__body {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
 .card__user {
   display: block;
+  text-decoration: underline;
   font-size: 20px;
   color: #999;
-  text-align: right;
-  text-decoration: underline;
+}
+
+.card__date {
+  display: block;
+  font-size: 12px;
+  margin-top: 10px;
+  color: #999;
 }
 /* 詳細ページ */
 .note__wrapper{
@@ -417,6 +461,13 @@ a {
   font-size: 16px;
   color: #999;
   text-decoration: underline;
+  margin-right: 20px;
+}
+
+.comment_date{
+  font-size: 12px;
+  margin-top: 10px;
+  color: #999;
 }
 
 /* ユーザーページ */

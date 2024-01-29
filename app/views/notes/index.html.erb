@@ -3,9 +3,10 @@
 
     <% if user_signed_in? %>
       <div class="greeting">
-        こんにちは、 
+        Welcome 「
         <%= link_to "#{current_user.name}", user_path(current_user), class: :greeting__link%>
-        さん
+        」<br>
+        みんなのリアルバイをみてみよう
         </div>
         <div class="card__wrapper">
         <%= render partial: 'note', collection: @notes %>

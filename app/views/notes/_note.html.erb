@@ -4,6 +4,9 @@
       <%= link_to image_tag(note.image, class: :card__img), note_path(note.id) %>
     </div>
     <div class="card__body"> 
+      <%= content_tag :div, class: "card__date" do %>
+        <%= note.created_at.strftime("%Y/%m/%d") %>
+      <% end %>
       <%= link_to "by #{note.user.name}", user_path(note.user), class: :card__user %>
     </div>
   </div>
