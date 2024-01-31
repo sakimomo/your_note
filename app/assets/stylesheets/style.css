@@ -259,29 +259,32 @@ a {
   text-align: center;
   opacity: 0;
   animation: slideIn 1s forwards;
-  letter-spacing: 2px; 
+  letter-spacing: 2px;
+  transform: translateY(50px); 
+}
+
+.greeting2 {
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 100px;
+  font-family: "Arvo", serif;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: 3px;
+  opacity: 0;
+  animation: slideIn 1s forwards;
+  transform: translateY(50px); 
 }
 
 @keyframes slideIn {
   from {
     opacity: 0;
-    transform: translateX(50px); 
+    transform: translateY(50px); 
   }
   to {
     opacity: 1;
-    transform: translateX(0);
+    transform: translateY(0);
   }
-}
-
-
-.greeting2{
-  font-size: 20px;
-  text-align:center;
-  margin-bottom: 40px;
-  font-family: "Arvo", serif;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: 3px;
 }
 .greeting__link{
   text-decoration: underline;
@@ -544,13 +547,12 @@ a {
 }
 
 .dog2 {
-  height: 180px;
-  margin-bottom: 40px;
-  transition: transform 0.3s ease; /* ホバー時のアニメーション効果 */
+  height: 220px;
+  transition: transform 0.5s ease;
 }
 
 .dog2:hover {
-  transform: scale(1.2); /* ホバー時に1.05倍に拡大 */
+  transform: scale(1.1);
 }
 
 .hey {
