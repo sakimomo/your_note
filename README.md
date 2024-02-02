@@ -35,7 +35,9 @@
 | ---------- | ---------- | ------------------------------ |
 | content    | text       | null: false                    | 
 | user       | references | null: false, foreign_key: true |
+| genre_id   | integer    | null: false                    |
 
+- belongs_to :genre
 - belongs_to :user
 - has_many :comments
 

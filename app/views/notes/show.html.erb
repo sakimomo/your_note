@@ -19,9 +19,11 @@
       <div class="note__body">
         <div class="note__detail">
           <%= @note.content %>
-          <%= content_tag :div, class: "card__date" do %>
+          <div class="note__detail2">
+            <%= content_tag :div, class: "card__date" do %>
             <%= @note.created_at.strftime("%Y/%m/%d %H:%M") %>
-           <% end %>
+            <% end %>
+           <div class="note__genre"><%= @note.genre.name %></div>
         </div>
       </div>
        <%= link_to "by #{@note.user.name}", user_path(@note.user), class: :note__user %>
