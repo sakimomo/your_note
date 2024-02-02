@@ -16,7 +16,7 @@
           </tr>
         </tbody>
       </table>
-      <%= link_to "Likes list", likes_index_path, class: :like__index %>
+      <%= link_to "Wish list", likes_index_path, class: :like__index %>
       <%= link_to "Following list", follows_user_path(@user), class: :like__index %>
       <%= link_to "Follower list", followers_user_path(@user), class: :like__index %>
         <img src="<%= image_path('AA219F00-BE4B-487B-8AD6-CBD465AF5253.png') %>" alt="Animated Image" class="dog2 my-button">
@@ -24,7 +24,7 @@
       <span class="hey">＜ Hi</span>
       <h2 class="page-heading">
       
-        <%= "#{@user.name}'s notes"%>
+        <%= "#{@user.name}'s closet"%>
       </h2>
       <div class="user__card">
        <%= render partial: 'notes/note', collection: @user_notes %>

@@ -6,7 +6,7 @@
         Welcome 「
         <%= link_to "#{current_user.name}", user_path(current_user), class: :greeting__link%>
         」<br>
-        みんなのリアルバイをみてみよう
+        みんなのクローゼットをみてみよう
         </div>
         <div class="card__wrapper">
         <%= render partial: 'note', collection: @notes %>
