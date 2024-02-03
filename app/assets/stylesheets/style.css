@@ -678,7 +678,7 @@ a {
 
 @media screen and (max-width: 768px) {
   .header {
-    height: 100px; /* 高さを100pxに設定 */
+    height: 100px; 
     padding: 10px;
     flex-direction: row; /* 横並びにする */
     align-items: center;
@@ -686,10 +686,10 @@ a {
   }
 
   .logo {
-    max-width: 40%; /* ロゴを50%の幅にする */
+    max-width: 40%; 
   }
 
   .menu-trigger {
-    max-width: 40%; /* ハンバーガーメニューを50%の幅にする */
+    max-width: 40%;
   }
 }
