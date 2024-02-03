@@ -74,16 +74,20 @@ a {
 }
 
 .logo {
-  width: 100%; 
-  max-width: 350px;
+  text-align: center; /* ロゴを中央寄せにする */
   margin-top: 2%;
-  display: flex;
+}
+
+.logo a {
+  width: 100%;
+  display: block; /* インライン要素からブロック要素に変更 */
+  max-width: 350px;
+  margin: 0 auto; /* 左右中央寄せ */
 }
 
 @media screen and (max-width: 768px) {
-  
-  .logo {
-    max-width: 250px; 
+  .logo a {
+    max-width: 500px;
   }
 }
 
@@ -669,5 +673,23 @@ a {
   }
   .table{
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    height: 100px; /* 高さを100pxに設定 */
+    padding: 10px;
+    flex-direction: row; /* 横並びにする */
+    align-items: center;
+    justify-content: space-between; 
+  }
+
+  .logo {
+    max-width: 40%; /* ロゴを50%の幅にする */
+  }
+
+  .menu-trigger {
+    max-width: 40%; /* ハンバーガーメニューを50%の幅にする */
   }
 }

@@ -18,9 +18,11 @@
 
   <body>
    <header class="header">
-   <div class="logo">
-   <%= link_to image_tag("IMG_1878.jpg"), root_path %>
-   </div>
+ <div class="logo">
+    <%= link_to root_path do %>
+    <%= image_tag("IMG_1878.jpg") %>
+    <% end %>
+  </div>
   <div class="menu-trigger">☰</div>
   <div class="menu">
     <div class="inner">
