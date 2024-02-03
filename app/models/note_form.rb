@@ -21,8 +21,17 @@ class NoteForm
     end
   end
 
-  def update(params, note)
-    note.update(params)
+  def update(attr, note_obj)
+    note = Note.find(note_obj.id)
+    tag = Tag.find_or_initialize_by(tag_name: tag_name)
+  
+    tag.save if tag_name.present?
+  
+    note.update(attr) 
+  
+    if tag_name.present?
+      NoteTagRelation.create(note_id: note.id, tag_id: tag.id) 
+    end
   end
 
 end

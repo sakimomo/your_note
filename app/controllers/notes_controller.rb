@@ -27,19 +27,22 @@ class NotesController < ApplicationController
   end
 
   def edit
-    return unless @note.nil? || current_user.id != @note.user_id
+    if @note.nil? || current_user.id != @note.user_id
+      redirect_to root_path
+      return
+    end
   
     note_attributes = @note.attributes
     @note_form = NoteForm.new(note_attributes)
-  
-    redirect_to root_path
+    @note_form.tag_name = @note.tags.first&.tag_name
   end
 
   def update
     @note_form = NoteForm.new(note_form_params)
+    @note_form.id = @note.id 
     @note_form.image ||= @note.image.blob
     if @note_form.valid?
-      @note.update(note_form_params)
+      @note_form.update(note_form_params, @note)
       redirect_to note_path
     else
       render :edit
@@ -53,9 +56,6 @@ class NotesController < ApplicationController
 
   private
 
-  #def note_params
-    #params.require(:note).permit(:content, :image, :genre_id).merge(user_id: current_user.id)
-  #end
   def set_note
     @note = Note.find(params[:id])
   end
