@@ -19,6 +19,12 @@ RSpec.describe Note, type: :model do
         expect(@note.errors.full_messages).to include("Content can't be blank")
       end
 
+      it 'tag_nameが空では登録できない' do
+        @note.tag_name = '' 
+        @note.valid?
+        expect(@note.errors.full_messages).to include("Tag name can't be blank")
+      end
+
       it 'genre_idが未選択項目だと登録できない' do
         @note.genre_id = 1 # 未選択項目のidを指定
         @note.valid?
@@ -31,7 +37,6 @@ RSpec.describe Note, type: :model do
         @note.valid?
         expect(@note.errors.full_messages).to include("User must exist")
       end
-
     end
   end
 end

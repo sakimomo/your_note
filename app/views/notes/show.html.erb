@@ -24,6 +24,7 @@
             <%= @note.created_at.strftime("%Y/%m/%d %H:%M") %>
             <% end %>
            <div class="note__genre"><%= @note.genre.name %></div>
+           <div class="note__genre">#<%= @note.tags.first&.tag_name %></div>
         </div>
       </div>
        <%= link_to "by #{@note.user.name}", user_path(@note.user), class: :note__user %>

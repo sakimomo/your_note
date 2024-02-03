@@ -2,7 +2,7 @@
   <div class="inner">
 
     <% if @likes.present? %>
-    <div class="page-heading">Liked notes</div>
+    <div class="page-heading">Wish list</div>
       <div class="likes-container">
         <% @likes.each do |like| %>
           <% note = like.note %>
@@ -19,7 +19,7 @@
         <% end %>
       </div>
     <% else %>
-    <div class="page-heading">No liked notes found.</div>
+    <div class="page-heading">Notes not found.</div>
     <% end %>
 
   </div>
