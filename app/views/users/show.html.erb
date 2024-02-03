@@ -16,17 +16,15 @@
           </tr>
         </tbody>
       </table>
-      <%= link_to "Likes list", likes_index_path, class: :like__index %>
+      <%= link_to "Wish list", likes_index_path, class: :like__index %>
       <%= link_to "Following list", follows_user_path(@user), class: :like__index %>
       <%= link_to "Follower list", followers_user_path(@user), class: :like__index %>
-      <a href="<%= root_path %>">
-        <img src="<%= image_path('AA219F00-BE4B-487B-8AD6-CBD465AF5253.png') %>" alt="Animated Image" class="inu2">
-      </a>
+        <img src="<%= image_path('AA219F00-BE4B-487B-8AD6-CBD465AF5253.png') %>" alt="Animated Image" class="dog2 my-button">
 
       <span class="hey">＜ Hi</span>
       <h2 class="page-heading">
       
-        <%= "#{@user.name}'s notes"%>
+        <%= "#{@user.name}'s closet"%>
       </h2>
       <div class="user__card">
        <%= render partial: 'notes/note', collection: @user_notes %>
@@ -34,3 +32,37 @@
     </div>
   </div>
 </div>
+
+<script>
+  const button = document.querySelector('.my-button');
+
+  const easeInOutQuad = (t) => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+
+  const handleMouseMove = (event) => {
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+
+    const buttonRect = button.getBoundingClientRect();
+    const buttonX = buttonRect.left + buttonRect.width / 2;
+    const buttonY = buttonRect.top + buttonRect.height / 2;
+
+    const distance = Math.hypot(mouseX - buttonX, mouseY - buttonY);
+
+    if (distance < 100) {
+      const speed = 0.8;  
+      const deltaX = (mouseX - buttonX) * speed;
+      const deltaY = (mouseY - buttonY) * speed;
+
+      button.style.transform = `translate(${deltaX}px, ${deltaY}px)`;
+    } else {
+      button.style.transform = 'translate(0, 0)';
+    }
+  };
+
+  const handleMouseLeave = () => {
+    button.style.transform = 'translate(0, 0)';
+  };
+
+  document.addEventListener('mousemove', handleMouseMove);
+  button.addEventListener('mouseleave', handleMouseLeave);
+</script>

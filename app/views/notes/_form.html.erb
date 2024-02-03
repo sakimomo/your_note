@@ -1,14 +1,24 @@
-<%= form_with model: @note, local: true do |f| %>
+<%= form_with model: @note_form, url: url, method: method,local: true do |f| %>
   <div class="field">
     <%= f.label :image, "Select post" %><br />
     <%= f.file_field :image, id: "note_image", onchange: "previewImage(this);" %>
     <div id="image-preview"></div>
   </div>
 
-  <div class="field">
-    <%= f.label :content %><br />
-    <%= f.text_area :content, placeholder: "Write a caption...", class: :form__text, id: "note_content" %>
-  </div>
+<div class="field">
+  <%= f.label :category %><br />
+  <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"genre-select"}) %>
+</div>
+
+<div class="field">
+  <%= f.label :tag %><br />
+  <%= f.text_field :tag_name, placeholder: 'add tags' %>
+</div>
+
+<div class="field">
+  <%= f.label :content %><br />
+  <%= f.text_area :content, placeholder: "Write a caption...", class: :form__text, id: "note_content" %>
+</div>
 
   <div class="actions">
     <%= f.submit "Post", class: :form__btn %>

@@ -1,4 +1,5 @@
 FactoryBot.define do
-  factory :relationship do
+  factory :tag do
+    
   end
 end

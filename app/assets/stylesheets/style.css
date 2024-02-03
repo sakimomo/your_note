@@ -36,76 +36,111 @@ a {
   text-decoration: none;
   color: #3b4043;
 }
+.footer{
+  margin-top: 70px;
+  height: 70px;
+  background-color: #efec81;
+  text-align: center;
+  padding-top: 20px;
+  color: #686868;
+  font-size: 10px;
+}
 
 /* ヘッダー */
-
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   background-color: #efec81;
-  margin-bottom: 48px;
-  padding: 10px 0;
-
+  padding: 10px 5%;
+  display: flex;
+  justify-content: space-between;
+  z-index: 1000; /* ヘッダーを最前面に表示するための値 */
 }
+
+.main{
+  padding-top: 200px;
+}
+
 .inner {
-  width: 1024px;
+  width: 80%;
   margin: 0 auto;
 }
+
 .nav {
   width: 100%;
   display: flex;
-  justify-content: space-between;
 }
+
 .logo {
   width: 350px;
-  margin-top: 3%;
+  margin-top: 2%;
+  display: flex;
 }
-.nav__btn{
+
+.nav__btn {
   display: inline-block;
   padding: 0.8em 3.2em;
   font-size: 0.8em;
-  color: #be0027;
+  color: #efec81;
   text-decoration: none;
   user-select: none;
-  border: 1px #be0027 solid;
   border-radius: 3px;
   transition: 0.4s ease;
   margin-top: 5%;
-}
-.nav__btn:hover{
-  color: #fff;
   background: #be0027;
-}
-
-.nav__logout{
-  display: inline-block;
-  padding: 0.8em 3.2em;
-  font-size: 0.8em;
-  color: #be0027;
-  text-decoration: none;
-  user-select: none;
   border: 1px #be0027 solid;
-  border-radius: 3px;
-  transition: 0.4s ease;
+
 }
 
-.nav__mypage{
-  display: inline-block;
-  padding: 0.8em 3.2em;
-  font-size: 0.8em;
+.nav__btn:hover {
   color: #be0027;
-  text-decoration: none;
-  user-select: none;
   border: 1px #be0027 solid;
-  border-radius: 3px;
-  transition: 0.4s ease;
+  background-color: #efec81;
 }
 
-.nav__mypage:hover{
-  color: #fdfbd4;
-  background: #163a27;
+/* ハンバーガーメニュー */
+.menu-trigger {
+  cursor: pointer;
+  display: block;
+  font-size: 70px;
+  color: #be0027;
+  transition: 0.2s ease;
 }
-
-.nav__logout:hover{
+.menu-trigger:hover{
   opacity: 0.5;
+}
+
+.menu-trigger.visible,
+.menu.visible {
+  display: block;
+}
+
+.menu {
+  position: absolute;
+  top: auto; 
+  right: 0;
+  background-color: #efec81;
+  padding: 10px;
+  display: none; 
+  flex-direction: column; 
+  margin-top: 90px;
+  border-radius: 5px;
+  height: 200px;
+}
+
+/* ナビゲーション */
+.nav__right,
+.menu {
+  display: none;
+  height: auto;
+}
+
+.nav__right.visible,
+.menu.visible {
+  display: flex; 
+  flex-direction: column;
 }
 
 /* フォーム周り */
@@ -219,18 +254,37 @@ a {
   }
 }
 
-.greeting{
-  margin-bottom: 40px;
-  text-align:center;
+.greeting {
+  margin-bottom: 70px;
+  text-align: center;
+  opacity: 0;
+  animation: slideIn 1s forwards;
+  letter-spacing: 2px;
+  transform: translateY(50px); 
 }
-.greeting2{
+
+.greeting2 {
   font-size: 20px;
-  text-align:center;
-  margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 100px;
   font-family: "Arvo", serif;
   font-weight: 400;
   font-style: normal;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
+  opacity: 0;
+  animation: slideIn 1s forwards;
+  transform: translateY(50px); 
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px); 
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 .greeting__link{
   text-decoration: underline;
@@ -246,7 +300,7 @@ a {
   
 }
 
-.inu{
+.dog{
   max-width: 100%;
   height: auto;
   display: block;
@@ -256,18 +310,19 @@ a {
 .card__wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content:center;
   align-items: center;
   min-height: calc(100vh - 161px);
 }
+
 .card {
-  width: calc((100% - 20px) / 3);
-  margin-bottom: 40px;
+  width: calc((100% - 45px) / 3);
+  margin-bottom: 20px;
   padding: 20px;
   background-color: #ffffff;
   border-radius: 10px;
   border: 1px #000000 solid;
-
+  margin-left: 15px;
 
 }
 .card__img-container {
@@ -277,6 +332,21 @@ a {
   overflow: hidden;
   position: relative;
   border: 1px #000000 solid;
+  transition: 0.2s ease;
+}
+.card__img-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none; 
+  transition: inherit; 
+}
+
+.card__img-container:hover:before {
+  background: rgba(184, 184, 184, 0.3);
 }
 
 .card__img {
@@ -292,12 +362,25 @@ a {
 .card__summary {
   font-size: 16px;
 }
+
+.card__body {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
 .card__user {
   display: block;
+  text-decoration: underline;
   font-size: 20px;
   color: #999;
-  text-align: right;
-  text-decoration: underline;
+}
+
+.card__date {
+  display: block;
+  font-size: 12px;
+  margin-top: 10px;
+  color: #999;
 }
 /* 詳細ページ */
 .note__wrapper{
@@ -378,6 +461,18 @@ a {
   transition: 0.4s ease;
   margin: 0 20px;
 }
+.note__detail2 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.note__genre {
+  display: flex; 
+  font-size: 12px;
+  margin-top: 10px;
+  color: #999;
+  margin-left: 20px;
+}
 
 .note__comments{
   background-color: #f6f6f6;
@@ -417,6 +512,13 @@ a {
   font-size: 16px;
   color: #999;
   text-decoration: underline;
+  margin-right: 20px;
+}
+
+.comment_date{
+  font-size: 12px;
+  margin-top: 10px;
+  color: #999;
 }
 
 /* ユーザーページ */
@@ -451,19 +553,18 @@ a {
 .user__card {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 
 }
 
-.inu2 {
-  height: 180px;
-  margin-bottom: 40px;
-  transition: transform 0.3s ease; /* ホバー時のアニメーション効果 */
+.dog2 {
+  height: 220px;
+  transition: transform 0.5s ease;
 }
 
-.inu2:hover {
-  transform: scale(1.2); /* ホバー時に1.05倍に拡大 */
+.dog2:hover {
+  transform: scale(1.1);
 }
 
 .hey {
@@ -472,7 +573,7 @@ a {
     font-size: 0.8em;
 }
 
-.inu2, .hey {
+.dog2, .hey {
   vertical-align: top;
 }
 

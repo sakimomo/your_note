@@ -18,9 +18,13 @@
       </div>
       <div class="note__body">
         <div class="note__detail">
-          <p class="detail__message">
-            <%= @note.content %>
-          </p>
+          <%= @note.content %>
+          <div class="note__detail2">
+            <%= content_tag :div, class: "card__date" do %>
+            <%= @note.created_at.strftime("%Y/%m/%d %H:%M") %>
+            <% end %>
+           <div class="note__genre"><%= @note.genre.name %></div>
+           <div class="note__genre">#<%= @note.tags.first&.tag_name %></div>
         </div>
       </div>
        <%= link_to "by #{@note.user.name}", user_path(@note.user), class: :note__user %>
@@ -32,7 +36,7 @@
               <%= f.text_field :content, id: "comment_content", placeholder: "Add a comment..." %>
             </div>
             <div class="actions">
-              <%= f.submit "送信する", class: :form__btn %>
+              <%= f.submit "Send", class: :form__btn %>
             </div>
           </div>
         <% end %>
@@ -41,6 +45,9 @@
             <li class="note_list">
               <%= comment.content %>
               <%= link_to comment.user.name, user_path(comment.user), class: :comment_user %>
+              <span class="comment_date">
+                <%= comment.created_at.strftime("%Y/%m/%d %H:%M") %>
+              </span>
             </li>
           <% end %>
         </ul>

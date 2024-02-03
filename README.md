@@ -35,9 +35,13 @@
 | ---------- | ---------- | ------------------------------ |
 | content    | text       | null: false                    | 
 | user       | references | null: false, foreign_key: true |
+| genre_id   | integer    | null: false                    |
+| tag_name   | text       | null: false                    | 
 
+- belongs_to :genre
 - belongs_to :user
 - has_many :comments
+- has_many :tags
 
 ## likesテーブル
 | Column     | Type       | Options                        |
@@ -56,3 +60,11 @@
 
 - belongs_to :following, class_name: "User"
 - belongs_to :follower, class_name: "User"
+
+# tagsテーブル
+| Column     | Type   | Options                   |
+| ---------- | ------ | ------------------------- |
+| name       | string | null: false, unique: true |
+
+- has_many :notes
+- has_many :note_tag_relations

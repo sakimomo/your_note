@@ -3,9 +3,10 @@
 
     <% if user_signed_in? %>
       <div class="greeting">
-        こんにちは、 
+        Welcome 「
         <%= link_to "#{current_user.name}", user_path(current_user), class: :greeting__link%>
-        さん
+        」<br>
+        みんなのクローゼットをみてみよう
         </div>
         <div class="card__wrapper">
         <%= render partial: 'note', collection: @notes %>
@@ -15,9 +16,9 @@
        <div class="snow"></div>
       </div>
         <div class="greeting2">
-        Hi, there! Sign up to see photos from your friends 
+        Hi, there! Sign up to check out your friend's note 
         </div>
-        <img src="<%= image_path('inu.gif') %>" alt="Animated Image" class="inu">
+        <img src="<%= image_path('dog.gif') %>" alt="Animated Image" class="dog">
     <% end%>
 
   </div>
