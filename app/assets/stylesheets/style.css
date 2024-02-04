@@ -648,6 +648,9 @@ a {
   .prototype_image{
     width: 60%;
   }
+  #comment_content {
+    width: 80%; 
+  }
 }
 
  /* スマホ表示 */
