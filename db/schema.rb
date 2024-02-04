@@ -70,7 +70,6 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_03_073028) do
   create_table "notes", charset: "utf8", force: :cascade do |t|
     t.text "content", null: false
     t.integer "genre_id", null: false
-    t.text "tag_name", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
