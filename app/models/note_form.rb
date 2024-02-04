@@ -30,6 +30,7 @@ class NoteForm
     note.update(attr) 
   
     if tag_name.present?
+      note.note_tag_relations.destroy_all
       NoteTagRelation.create(note_id: note.id, tag_id: tag.id) 
     end
   end

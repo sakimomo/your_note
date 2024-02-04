@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe Note, type: :model do
+RSpec.describe NoteForm, type: :model do
   before do
-    @note = FactoryBot.build(:note)
-  end
+    @note = FactoryBot.build(:note_form)
+    end
 
   describe '投稿機能' do
     context '投稿できる時' do
@@ -32,10 +32,10 @@ RSpec.describe Note, type: :model do
       end
 
       it 'userが紐づいていない場合登録できない' do
-        @note.user = FactoryBot.create(:user)
-        @note.user = nil
+        @note.user_id = FactoryBot.create(:user).id
+        @note.user_id = nil
         @note.valid?
-        expect(@note.errors.full_messages).to include("User must exist")
+        expect(@note.errors.full_messages).to include("User can't be blank")
       end
     end
   end

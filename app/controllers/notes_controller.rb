@@ -50,6 +50,7 @@ class NotesController < ApplicationController
   end
 
   def destroy
+    @note.note_tag_relations.destroy_all 
     @note.destroy
     redirect_to root_path
   end
