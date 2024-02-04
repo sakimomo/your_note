@@ -650,7 +650,12 @@ a {
   }
   #comment_content {
     width: 80%; 
+    font-size: 10px;
   }
+  #send_btn{
+    font-size: 10px;
+  }
+
 }
 
  /* スマホ表示 */
