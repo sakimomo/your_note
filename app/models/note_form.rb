@@ -12,8 +12,8 @@ class NoteForm
 
   def save
     return false if invalid?
-  
-    note = Note.create(content: content, tag_name: tag_name, image: image, genre_id: genre_id, user_id: user_id)
+
+    note = Note.create(content: content, image: image, genre_id: genre_id, user_id: user_id)
     if note.persisted? && tag_name.present? && !tag_name.empty?
       tag = Tag.where(tag_name: tag_name).first_or_initialize
       tag.save
