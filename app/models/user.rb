@@ -16,7 +16,7 @@ class User < ApplicationRecord
 
   validates :name, presence: true
   validates :profile, presence: true
-  validates :password, format: { with: /\A(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]+\z/ }
+  validates :password, format: { with: /\A(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]+\z/, message: "should include both letters and numbers" }
 
   def followed_by?(user)
     follower = passive_relationships.find_by(following_id: user.id)
