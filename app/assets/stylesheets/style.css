@@ -682,6 +682,10 @@ a {
   .table{
     width: 100%;
   }
+  .dog2{
+    width: 30%;
+    height: 30%;
+  }
 }
 
 @media screen and (max-width: 768px) {

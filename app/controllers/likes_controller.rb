@@ -8,16 +8,13 @@ class LikesController < ApplicationController
   def create
     like = current_user.likes.build(note_id: params[:note_id])
     like.save
-    respond_to do |format|
-      format.js
-    end
+    render partial: 'likes/like', locals: { note: like.note }
   end
 
   def destroy
     like = current_user.likes.find_by(note_id: params[:note_id])
+    note = like.note
     like.destroy
-    respond_to do |format|
-      format.js
-    end
+    render partial: 'likes/like', locals: { note: note }
   end
 end
