@@ -4,7 +4,12 @@
       <h2 class="page-heading">
         <%= "#{@user.name}'s page"%>
       </h2>
-      <table class="table">
+        <% if current_user != @user %>
+        <div class="follow__btn">
+          <%= render partial: "relationships/relationship", locals: { note: @user } %>
+        </div>  
+        <% end%>
+        <table class="table">
         <tbody>
           <tr>
             <th class="table__col1">Name</th>

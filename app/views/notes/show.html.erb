@@ -10,7 +10,6 @@
       <% else %>
         <div class="note__manage">
           <%= render partial: "likes/like", locals: { note: @note } %>
-          <%= render partial: "relationships/relationship", locals: { note: @note } %>
         </div>
       <% end%>
       <div class="note__image">

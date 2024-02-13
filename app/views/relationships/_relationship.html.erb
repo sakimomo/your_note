@@ -1,9 +1,7 @@
-<%= turbo_frame_tag dom_id(note, :relationship) do %>
-<% if current_user != note.user %>
- <% if note.user.followed_by?(current_user) %>
-  <%= link_to "Following", user_relationships_path(note.user.id), class: "note__btn", data: { turbo_method: :delete } %>
- <% else %>
-  <%= link_to "＋Follow", user_relationships_path(note.user.id), class: "note__btn", data: { turbo_method: :post } %>
- <% end %>
-<% end%>
-<% end%>
+<%= turbo_frame_tag dom_id(@user, :relationship) do %>
+    <% if @user.followed_by?(current_user) %>
+      <%= link_to "Following", user_relationships_path(@user.id), data: { turbo_method: :delete } %>
+    <% else %>
+      <%= link_to "＋Follow", user_relationships_path(@user.id), data: { turbo_method: :post } %>
+    <% end %>
+<% end %>
