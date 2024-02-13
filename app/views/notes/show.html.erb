@@ -10,6 +10,7 @@
       <% else %>
         <div class="note__manage">
           <%= render partial: "likes/like", locals: { note: @note } %>
+          <%= link_to "#{@note.user.name}'s page", user_path(@note.user), class: :note__user %>
         </div>
       <% end%>
       <div class="note__image">

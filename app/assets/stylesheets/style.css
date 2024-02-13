@@ -538,22 +538,6 @@ a {
   min-height: calc(100vh - 161px);
 
 }
-.follow__btn{
-  width: 20%;
-  padding: 1.0em 2.5em;
-  font-size: 1.0em;
-  color: #999;
-  text-decoration: none;
-  user-select: none;
-  border-radius: 10px;
-  transition: 0.4s ease;
-  background-color: #efec81;
-  margin-bottom: 30px;
-  text-align: center;
-  border: 1px #000000 solid;
-  
-}
-
 .table{
   border-collapse: collapse;
   margin-bottom: 32px;
@@ -639,12 +623,31 @@ a {
 /* フォロー機能 */
 .f__user{
   color: #f6f6f6;
+  font-size: 25px;
   margin-bottom: 30px;
 }
 
 .f__user__link{
   text-decoration: underline;
   color: #ffffff;
+}
+.follow__btn{
+  width: 20%;
+  padding: 1.0em 2.5em;
+  font-size: 1.0em;
+  color: #999;
+  text-decoration: none;
+  user-select: none;
+  border-radius: 10px;
+  transition: 0.4s ease;
+  background-color: #efec81;
+  margin-bottom: 30px;
+  text-align: center;
+  border: 1px #000000 solid;
+}
+.follow__btn:hover{
+  background:#efaf81;
+  color: #efec81;
 }
 
 /* レスポンシブデザイン */
