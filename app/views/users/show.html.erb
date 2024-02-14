@@ -6,7 +6,7 @@
       </h2>
         <% if current_user != @user %>
         <div class="follow__btn">
-          <%= render partial: "relationships/relationship", locals: { note: @user } %>
+          <%= render partial: "relationships/relationship", locals: { user: @user } %>
         </div>  
         <% end%>
         <table class="table">
