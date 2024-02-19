@@ -1,0 +1,22 @@
+<div class="main">
+  <div class="form__wrapper">
+    <h2 class="page-heading">Search notes</h2>
+    <div class='note-contents' id="detailed-search-result-wrapper">
+      <%= search_form_for @q, url: search_notes_path, html: { id: "detailed-search-form" } do |f| %>
+        <div class="flex-container">
+          <div class="field2">
+            <%= f.text_field :content_cont, id: "search_content" %>
+          </div>
+          <%= f.submit 'Search', class: :search_btn %>
+          <div class="return_btn">
+            <%= link_to 'Top pageへ', root_path %>
+          </div>
+        </div>
+      <% end %>
+
+      <div class="card__wrapper">
+        <%= render partial: 'note', collection: @notes %>
+      </div>
+    </div>
+  </div>
+</div>

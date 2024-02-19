@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   resources :notes do
     resources :comments, only: [:create]
     resource :likes, only: [:create, :destroy]
+    collection do
+      get 'search', to: 'notes#search'
+    end
   end
   
   resources :users, only: [:show] do
