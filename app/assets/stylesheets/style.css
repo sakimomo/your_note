@@ -651,6 +651,49 @@ a {
   color: #efec81;
 }
 
+/* 検索機能 */
+#search_content{
+  width: 300px;
+  padding: 0.8em 0.8em;
+  margin-top: 0;
+  font-size: 1.0em;
+  margin-right: 30px;
+  border-radius: 8px;
+  border: 1px #000000 solid;
+}
+.search_btn{
+  width: 13%;
+  padding: 1.0em;
+  font-size: 0.8em;
+  color: #163a27;
+  border-radius: 5px;
+  transition: 0.4s ease;
+  background-color: #efec81;
+  text-align: center;
+  border: 1px #000000 solid;
+}
+.search_btn:hover{
+  background:#163a27;
+  color: #efec81;
+}
+.return_btn{
+  width: auto;
+  padding: 1.5em;
+  font-size: 0.8em;
+  border-radius: 5px;
+}
+
+.return_btn a {
+  color: #999;
+  text-decoration: underline;
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 60px; 
+}
+
 /* レスポンシブデザイン */
 /* タブレット対応 */
 @media (max-width: 1024px) {

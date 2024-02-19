@@ -1,6 +1,7 @@
 class NotesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :destroy, :update]
   before_action :set_note, only: [:show, :edit, :update, :destroy]
+  skip_before_action :set_note, only: [:search]
 
   def index
     @notes = Note.order(created_at: :desc).all
@@ -52,6 +53,11 @@ class NotesController < ApplicationController
     @note.note_tag_relations.destroy_all
     @note.destroy
     redirect_to root_path
+  end
+
+  def search
+    @q = Note.ransack(params[:q])
+    @notes = @q.result(distinct: true).order(created_at: :desc)
   end
 
   private
