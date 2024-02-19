@@ -6,6 +6,6 @@ FactoryBot.define do
     content { Faker::Lorem.sentence }
     tag_name { Faker::Lorem.word }
     genre_id { 2 }
-    image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/sample1.png')) } 
+    image { Rack::Test::UploadedFile.new(File.join(Rails.root, 'spec/fixtures/sample1.png')) }
   end
 end

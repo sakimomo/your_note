@@ -15,6 +15,6 @@ class LikesController < ApplicationController
     like = current_user.likes.find_by(note_id: params[:note_id])
     note = like.note
     like.destroy
-    render partial: 'likes/like', locals: { note: note }
+    render partial: 'likes/like', locals: { note: }
   end
 end

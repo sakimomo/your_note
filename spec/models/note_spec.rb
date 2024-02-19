@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe NoteForm, type: :model do
   before do
     @note = FactoryBot.build(:note_form)
-    end
+  end
 
   describe '投稿機能' do
     context '投稿できる時' do
@@ -20,7 +20,7 @@ RSpec.describe NoteForm, type: :model do
       end
 
       it 'tag_nameが空では登録できない' do
-        @note.tag_name = '' 
+        @note.tag_name = ''
         @note.valid?
         expect(@note.errors.full_messages).to include("Tag name can't be blank")
       end
@@ -41,4 +41,4 @@ RSpec.describe NoteForm, type: :model do
   end
 end
 
-#メモ：テスト実行前に rails db:test:prepare をするとテストデータベースが正しく設定され、テストが実行できるようになる
+# メモ：テスト実行前に rails db:test:prepare をするとテストデータベースが正しく設定され、テストが実行できるようになる

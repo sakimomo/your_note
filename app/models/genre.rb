@@ -14,10 +14,9 @@ class Genre < ActiveHash::Base
     { id: 12, name: 'ファッション雑貨' },
     { id: 13, name: 'アクセサリー' },
     { id: 14, name: '水着' },
-    { id: 15, name: 'その他' },
+    { id: 15, name: 'その他' }
   ]
 
   include ActiveHash::Associations
   has_many :notes
- 
-  end
+end

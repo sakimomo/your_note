@@ -10,7 +10,7 @@ class Note < ApplicationRecord
 
   validates :content, presence: true
   validates :image, presence: true
-  validates :genre_id, numericality: { other_than: 1 , message: "can't be blank"}
+  validates :genre_id, numericality: { other_than: 1, message: "can't be blank" }
 
   def liked_by?(user)
     likes.where(user_id: user.id).exists?
