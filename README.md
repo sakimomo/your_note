@@ -90,7 +90,7 @@ https://docs.google.com/spreadsheets/d/1bHZZnpBK3rgcD9N2LXnRifG38PFmLfT-LYQd-NZd
  
 # ローカルでの動作方法*＊
 以下のコマンドを順に実行<br>
-% git clone https://github.com/sakimomo　　　<br>
+% git clone https://github.com/sakimomo<br>
 % cd ~/projects/your_note　　　<br>
 %  bundle install　　　<br>
 % yarn install　　　<br>
