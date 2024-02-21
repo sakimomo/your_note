@@ -754,7 +754,7 @@ a {
     width: 40%;
   }
   .menu{
-    margin-top: 150px;
+    margin-top: 130px;
   }
 }
 
@@ -773,5 +773,22 @@ a {
 
   .menu-trigger {
     max-width: 40%;
+  }
+
+  .flex-container {
+    display: flex;
+    flex-direction: column; /* 縦に並べる */
+    justify-content: center; /* 中央寄せ */
+    align-items: center; /* 中央寄せ */
+    margin-bottom: 20px; /* 下に余白を追加 */
+  }
+  #search_content{
+    width: 100%;
+  }
+
+  .search_btn {
+    margin-top: 10px; /* 検索ボタンとの上部の余白 */
+    width: 40%;
+    font-size: 0.5;
   }
 }
