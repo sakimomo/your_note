@@ -384,8 +384,9 @@ a {
 .card__user {
   display: block;
   text-decoration: underline;
-  font-size: 20px;
+  font-size: 15px;
   color: #999;
+  padding-top: 10px;
 }
 
 .card__date {
@@ -755,6 +756,9 @@ a {
   }
   .menu{
     margin-top: 130px;
+  }
+  .note__image{
+    width: 300px;
   }
 }
 

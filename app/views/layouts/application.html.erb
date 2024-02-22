@@ -8,6 +8,8 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <link rel="preload" href="path/to/your.js" as="script" onload="this.onload=null;this.rel='script'">
+    
     <%= javascript_importmap_tags %>
     <%= javascript_include_tag 'hamburger_menu' %>
     <link rel="preconnect" href="https://fonts.googleapis.com">
