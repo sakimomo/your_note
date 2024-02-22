@@ -74,10 +74,10 @@ https://docs.google.com/spreadsheets/d/1bHZZnpBK3rgcD9N2LXnRifG38PFmLfT-LYQd-NZd
 現在、検索機能を実装中。<br>
 今後、より複雑な検索機能を実装することで、ユーザーのニーズにさらに適した情報が得られるようにしたい。
  
-# データベース設計＊＊
+# データベース設計
 ![draw.io Image](drawio_image.png)
  
-# 画面遷移図＊＊
+# 画面遷移図
 ![draw.io Image](drawio_image2.png)
  
 # 開発環境
@@ -88,7 +88,7 @@ https://docs.google.com/spreadsheets/d/1bHZZnpBK3rgcD9N2LXnRifG38PFmLfT-LYQd-NZd
 ・Visual Studio Code<br>
 ・GitHub<br>
  
-# ローカルでの動作方法*＊
+# ローカルでの動作方法
 以下のコマンドを順に実行<br>
 % git clone https://github.com/sakimomo<br>
 % cd ~/projects/your_note　　　<br>
