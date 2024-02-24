@@ -21,7 +21,9 @@
           </tr>
         </tbody>
       </table>
-      <%= link_to "Wish list", likes_index_path, class: :like__index %>
+      <% if current_user == @user %>
+        <%= link_to "Wish list", likes_index_path, class: :like__index %>
+      <% end%>
       <%= link_to "Following list", follows_user_path(@user), class: :like__index %>
       <%= link_to "Follower list", followers_user_path(@user), class: :like__index %>
         <img src="<%= image_path('AA219F00-BE4B-487B-8AD6-CBD465AF5253.png') %>" alt="Animated Image" class="dog2 my-button">
