@@ -57,7 +57,15 @@ class NotesController < ApplicationController
 
   def search
     @q = Note.ransack(params[:q])
-    @notes = @q.result(distinct: true).order(created_at: :desc)
+
+    @notes = if params[:q].present? && params[:q][:tag_name_cont].present?
+               Note.joins(:note_tag_relations, :tags)
+                   .where(note_tag_relations: { tag_id: Tag.where(tag_name: params[:q][:tag_name_cont]) })
+                   .distinct
+                   .order(created_at: :desc)
+             else
+               @q.result(distinct: true).order(created_at: :desc)
+             end
   end
 
   private

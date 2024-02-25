@@ -681,18 +681,28 @@ a {
   width: auto;
   padding: 1.5em;
   font-size: 0.8em;
-  border-radius: 5px;
 }
 
 .return_btn a {
-  color: #999;
+  color:#fdfbd4;
   text-decoration: underline;
+  margin-right: 10px;
 }
 
 .flex-container {
   display: flex;
   align-items: center;
   margin-bottom: 60px; 
+}
+
+.input-box{
+  width: 100px;
+  padding: 0.8em 0.8em;
+  margin-top: 0;
+  font-size: 0.5em;
+  margin-right: 30px;
+  border-radius: 5px;
+  border: 1px #000000 solid;
 }
 
 /* レスポンシブデザイン */

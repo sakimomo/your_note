@@ -6,10 +6,12 @@
         <div class="flex-container">
           <div class="field2">
             <%= f.text_field :content_cont, id: "search_content" %>
+            <%= f.text_field :tags_tag_name_cont, placeholder: 'Search by tags', class: 'input-box' %>
           </div>
           <%= f.submit 'Search', class: :search_btn %>
           <div class="return_btn">
-            <%= link_to 'Top pageへ', root_path %>
+            <%= link_to 'Top Page', root_path %>
+            <%= link_to 'Back', search_notes_path %>
           </div>
         </div>
       <% end %>

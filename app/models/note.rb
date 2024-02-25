@@ -16,6 +16,10 @@ class Note < ApplicationRecord
     ['content']
   end
 
+  def self.search_by_tag(tag_name)
+    joins(:tags).where(tags: { tag_name: })
+  end
+
   def liked_by?(user)
     likes.where(user_id: user.id).exists?
   end
