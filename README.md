@@ -75,10 +75,10 @@ https://docs.google.com/spreadsheets/d/1bHZZnpBK3rgcD9N2LXnRifG38PFmLfT-LYQd-NZd
 今後、より複雑な検索機能を実装することで、ユーザーのニーズにさらに適した情報が得られるようにしたい。
  
 # データベース設計
-![draw.io Image](drawio_image.png)
+![draw.io Image](drawio1.png)
  
 # 画面遷移図
-![draw.io Image](drawio_image2.png)
+![draw.io Image](drawio2.png)
  
 # 開発環境
 ・Ruby on Rails<br>
